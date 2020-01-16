@@ -3,6 +3,7 @@ import React from 'react';
 import './global.css';
 import './App.css';
 import './Sidebar.css';
+import './Main.css';
 
 function App() {
   return (
@@ -36,7 +37,52 @@ function App() {
         </form>
       </aside>
       <main>
-
+        <ul>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars0.githubusercontent.com/u/56613910?s=460&v=4" alt="Eduardo Santana" />
+              <div className="user-info">
+                <strong>Eduardo Santana</strong>
+                <span>ReactJS, React Native, NodeJS</span>
+              </div>
+            </header>
+            <p>On the road to become a full-stack developer.</p>
+            <a href="https://github.com/eduardo3g">Acessar perfil no Github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars0.githubusercontent.com/u/56613910?s=460&v=4" alt="Eduardo Santana" />
+              <div className="user-info">
+                <strong>Eduardo Santana</strong>
+                <span>ReactJS, React Native, NodeJS</span>
+              </div>
+            </header>
+            <p>On the road to become a full-stack developer.</p>
+            <a href="https://github.com/eduardo3g">Acessar perfil no Github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars0.githubusercontent.com/u/56613910?s=460&v=4" alt="Eduardo Santana" />
+              <div className="user-info">
+                <strong>Eduardo Santana</strong>
+                <span>ReactJS, React Native, NodeJS</span>
+              </div>
+            </header>
+            <p>On the road to become a full-stack developer.</p>
+            <a href="https://github.com/eduardo3g">Acessar perfil no Github</a>
+          </li>
+          <li className="dev-item">
+            <header>
+              <img src="https://avatars0.githubusercontent.com/u/56613910?s=460&v=4" alt="Eduardo Santana" />
+              <div className="user-info">
+                <strong>Eduardo Santana</strong>
+                <span>ReactJS, React Native, NodeJS</span>
+              </div>
+            </header>
+            <p>On the road to become a full-stack developer.</p>
+            <a href="https://github.com/eduardo3g">Acessar perfil no Github</a>
+          </li>
+        </ul>
       </main>
     </div>
   );
