@@ -7,6 +7,7 @@ import './Sidebar.css';
 import './Main.css';
 
 function App() {
+  const [devs, setDevs] = useState([]);
   const[github_username, setGithubUsername] = useState('');
   const [techs, setTechs] = useState('');
   const [latitude, setLatitude] = useState('');
@@ -29,6 +30,16 @@ function App() {
     );
   }, []);
 
+  useEffect(() => {
+    async function loadDevs() {
+      const response = await api.get('/devs');
+
+      setDevs(response.data);
+    }
+
+    loadDevs();
+  }, []);
+
   async function handleAddDev(e) {
     e.preventDefault();
 
@@ -38,6 +49,9 @@ function App() {
       latitude,
       longitude
     });
+
+    setGithubUsername('');
+    setTechs('');
 
     console.log(response.data);
   }
@@ -100,50 +114,19 @@ function App() {
       </aside>
       <main>
         <ul>
-          <li className="dev-item">
+          {devs.map(dev => (
+            <li key={dev._id} className="dev-item">
             <header>
-              <img src="https://avatars0.githubusercontent.com/u/56613910?s=460&v=4" alt="Eduardo Santana" />
+              <img src={dev.avatar_url} alt={dev.name} />
               <div className="user-info">
-                <strong>Eduardo Santana</strong>
-                <span>ReactJS, React Native, NodeJS</span>
+                <strong>{dev.name}</strong>
+                <span>{dev.techs.join(', ')}</span>
               </div>
             </header>
-            <p>On the road to become a full-stack developer.</p>
-            <a href="https://github.com/eduardo3g">Acessar perfil no Github</a>
+            <p>{dev.bio}</p>
+            <a href={`https://github.com/${dev.github_username}`}>Acessar perfil no Github</a>
           </li>
-          <li className="dev-item">
-            <header>
-              <img src="https://avatars0.githubusercontent.com/u/56613910?s=460&v=4" alt="Eduardo Santana" />
-              <div className="user-info">
-                <strong>Eduardo Santana</strong>
-                <span>ReactJS, React Native, NodeJS</span>
-              </div>
-            </header>
-            <p>On the road to become a full-stack developer.</p>
-            <a href="https://github.com/eduardo3g">Acessar perfil no Github</a>
-          </li>
-          <li className="dev-item">
-            <header>
-              <img src="https://avatars0.githubusercontent.com/u/56613910?s=460&v=4" alt="Eduardo Santana" />
-              <div className="user-info">
-                <strong>Eduardo Santana</strong>
-                <span>ReactJS, React Native, NodeJS</span>
-              </div>
-            </header>
-            <p>On the road to become a full-stack developer.</p>
-            <a href="https://github.com/eduardo3g">Acessar perfil no Github</a>
-          </li>
-          <li className="dev-item">
-            <header>
-              <img src="https://avatars0.githubusercontent.com/u/56613910?s=460&v=4" alt="Eduardo Santana" />
-              <div className="user-info">
-                <strong>Eduardo Santana</strong>
-                <span>ReactJS, React Native, NodeJS</span>
-              </div>
-            </header>
-            <p>On the road to become a full-stack developer.</p>
-            <a href="https://github.com/eduardo3g">Acessar perfil no Github</a>
-          </li>
+          ))}       
         </ul>
       </main>
     </div>
