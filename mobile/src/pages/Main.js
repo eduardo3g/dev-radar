@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { StyleSheet, Image, View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { StyleSheet, Image, View, Text, TextInput, TouchableOpacity, Keyboard } from 'react-native';
 import MapView, { Marker, Callout } from 'react-native-maps';
 import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
 import { MaterialIcons } from '@expo/vector-icons';
@@ -36,7 +36,7 @@ function Main({ navigation }) {
 
   return (
     <>
-    <MapView initialRegion={currentRegion} style={styles.map}>
+    <MapView onPress={() => Keyboard.dismiss()} initialRegion={currentRegion} style={styles.map}>
       <Marker coordinate={{ latitude: -23.6294364, longitude: -46.6191701 }}>
         <Image style={styles.avatar} source={{ uri: 'https://avatars0.githubusercontent.com/u/56613910?s=460&v=4' }} />
 
@@ -51,19 +51,19 @@ function Main({ navigation }) {
         </Callout>
       </Marker>
     </MapView>
-    <View style={styles.searchForm}>
-        <TextInput
-          style={styles.searchInput} 
-          placeholder="Buscar devs por tecnologias..."
-          placeholderTextColor="#999"
-          autoCapitalize="words"
-          autoCorrect={false}
-        />
+      <View style={styles.searchForm}>
+          <TextInput
+            style={styles.searchInput} 
+            placeholder="Buscar devs por tecnologias..."
+            placeholderTextColor="#999"
+            autoCapitalize="words"
+            autoCorrect={false}
+          />
 
-        <TouchableOpacity onPress={() => {}} style={styles.loadButton}>
-          <MaterialIcons name="my-location" size={20} color="#FFF" />
-        </TouchableOpacity>
-    </View>
+          <TouchableOpacity onPress={() => {}} style={styles.loadButton}>
+            <MaterialIcons name="my-location" size={20} color="#FFF" />
+          </TouchableOpacity>
+      </View>
     </>
   );
 }
@@ -103,7 +103,7 @@ const styles = StyleSheet.create({
 
   searchForm: {
     position: 'absolute',
-    bottom: 20,
+    top: 20,
     left: 20,
     right: 20,
     zIndex: 5,
