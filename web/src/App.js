@@ -53,7 +53,7 @@ function App() {
     setGithubUsername('');
     setTechs('');
 
-    console.log(response.data);
+    setDevs([...devs, response.data]);
   }
 
   return (
