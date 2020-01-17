@@ -5,6 +5,11 @@ li.dev-item {
   padding: 20px;
 }
 
+li header {
+  display: flex;
+  align-items: center;
+}
+
 li.dev-item header {
   display: flex;
   flex-direction: row;
