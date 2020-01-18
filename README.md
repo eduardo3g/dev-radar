@@ -42,7 +42,11 @@ Follow the steps bellow to run all the clients (backend, web and mobile).
 
 - Backend: access the backend repository typing `cd /backend` then run `yarn dev`. It runs on port `http://localhost:3333`
 
-- Web: access the web repository typing `cd /web` then run `yarn start`. It runs on port `http://localhost:3000`
+- Web: access the web repository typing `cd /web` then run `yarn start`. It runs on port `http://localhost:3000`. <br />
+<b>IMPORTANT</b>: allow the use of your current location for a better user experience.
 
 - Mobile: access the mobile repository typing `cd /mobile` then run `yarn start`. A new window will open on your default browser
 showing a Expo web page. Get the mobile application IP address on the bottom left side and change it on your source code. The file you need to replace the IP is `mobile/services/api.js`. Then go back to your browser and scan the QR Code using your cellphone. If you already have the app `Expo Client` installed, it will immediately notify you to open the app.
+
+# Preview
+<p align="center"><img src="https://scontent.fcgh7-1.fna.fbcdn.net/v/t1.0-9/s960x960/82508796_2611496132412683_1196367267764371456_o.jpg?_nc_cat=109&_nc_ohc=RBjs64gffikAX9ZE_Hl&_nc_ht=scontent.fcgh7-1.fna&_nc_tp=1002&oh=24ec6918ed4031578f11eb6d91a8a723&oe=5E9848D0" alt="Demonstração DevRadar mobile" style="width: 100px;height=100px;" /></p>
