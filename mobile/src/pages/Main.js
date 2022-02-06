@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, Image, View, Text, TextInput, TouchableOpacity, Keyboard } from 'react-native';
 import MapView, { Marker, Callout } from 'react-native-maps';
-import { requestPermissionsAsync, getCurrentPositionAsync } from 'expo-location';
+import * as Location from 'expo-location';
 import { MaterialIcons } from '@expo/vector-icons';
 
 import api from '../services/api';
@@ -13,11 +13,12 @@ function Main({ navigation }) {
   const [techs, setTechs] = useState('');
   
   useEffect(() => {
-    async function loadInitialPosition() {
-      const { granted } = await requestPermissionsAsync();
+      async function loadInitialPosition() {
 
+      const { granted } = await Location.requestForegroundPermissionsAsync();
+ 
       if (granted) {
-        const { coords } = await getCurrentPositionAsync({
+        const { coords } = await Location.getCurrentPositionAsync({
           enableHighAccuracy: true,
         });
 
@@ -109,7 +110,7 @@ function Main({ navigation }) {
       <View style={styles.searchForm}>
           <TextInput
             style={styles.searchInput} 
-            placeholder="Buscar devs por tecnologias..."
+            placeholder="search..."
             placeholderTextColor="#999"
             autoCapitalize="words"
             autoCorrect={false}
