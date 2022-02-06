@@ -13,6 +13,8 @@ exports.setupWebsocket = (server) => {
     // parameters sent from front-end 
     const { latitude, longitude, techs } = socket.handshake.query;  
 
+    // console.log(latitude, longitude, techs)
+      
     connections.push({
       id: socket.id,
       coordinates: {

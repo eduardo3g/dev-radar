@@ -8,27 +8,29 @@
     "eject": "expo eject"
   },
   "dependencies": {
-    "@react-native-community/masked-view": "^0.1.6",
-    "axios": "^0.21.1",
-    "expo": "~36.0.0",
-    "expo-location": "~8.0.0",
-    "react": "~16.9.0",
-    "react-dom": "~16.9.0",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-36.0.0.tar.gz",
-    "react-native-gesture-handler": "~1.5.0",
-    "react-native-maps": "0.26.1",
-    "react-native-reanimated": "~1.4.0",
-    "react-native-safe-area-context": "0.6.0",
-    "react-native-screens": "2.0.0-alpha.12",
-    "react-native-web": "~0.11.7",
-    "react-native-webview": "7.4.3",
-    "react-navigation": "^4.0.10",
-    "react-navigation-stack": "^2.0.15",
-    "socket.io-client": "^2.3.0"
+    "@react-native-community/masked-view": "^0.1.11",
+    "axios": "^0.25.0",
+    "expo": "^44.0.5",
+    "expo-location": "~14.0.1",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "react-native": "0.64.3",
+    "react-native-gesture-handler": "~2.1.0",
+    "react-native-maps": "0.29.4",
+    "react-native-pulse": "^1.0.7",
+    "react-native-reanimated": "~2.3.1",
+    "react-native-safe-area-context": "3.3.2",
+    "react-native-screens": "~3.10.2",
+    "react-native-web": "0.17.5",
+    "react-native-webview": "11.15.0",
+    "react-navigation": "^4.4.4",
+    "react-navigation-stack": "^2.10.4",
+    "socket.io-client": "^4.4.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.0.0",
-    "babel-preset-expo": "~8.0.0"
+    "@babel/core": "^7.16.12",
+    "axios-logger": "^2.6.0",
+    "babel-preset-expo": "9.0.2"
   },
   "private": true
 }
