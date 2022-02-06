@@ -1,6 +1,7 @@
 import socketio from 'socket.io-client';
+import { IO_SERVER } from '../helper/config';
 
-const socket = socketio('http://172.24.147.185:3333', {
+const socket = socketio(IO_SERVER, {
   autoConnect: false,
 });
 

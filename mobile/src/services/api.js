@@ -1,7 +1,11 @@
 import axios from 'axios';
+import * as AxiosLogger from 'axios-logger';
+import { AXIOS_SERVER } from '../helper/config';
 
 const api = axios.create({
-  baseURL: 'http://192.168.0.13:3333',
+    baseURL: AXIOS_SERVER,
 });
+
+api.interceptors.request.use(AxiosLogger.requestLogger);
 
 export default api;
